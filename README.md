@@ -5,5 +5,6 @@
 ## 사용자 비밀번호: UserPassword
 ## 수정:ChangeComment
 ## 삭제:DeleteComment
+## Enter: EnterBtn
 그 외 추가 예정
 
