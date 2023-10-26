@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="scripts/Comment.js"></script>
+    <script src="scripts/Comment.js" defer></script>
 <!--    <script src="scripts/test.js"></script>-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="styles/Comment.css">
@@ -24,8 +24,9 @@
             <input id="PasswordInput" placeholder="비밀번호">
             <button  id="UserCheckBtn" click="likesBtn">Enter</button>
         </form>
-<textarea id="CommentText" type="text" placeholder="댓글 입력 ">
-</textarea>
+<textarea id="CommentText" type="text"  placeholder="댓글 입력" ></textarea>
+        <h4>`${userName}`</h4>
+        <p class="ReviewText">`${CommentArea}`</p>
 <!--        <button id="UserDeleteBtn" click="">삭제</button>-->
 <!--        <button id="UserRepairBtn" click="">수정</button>-->
     </div>

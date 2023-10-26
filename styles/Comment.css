@@ -11,7 +11,7 @@ body{
    width:100%
 }
 /*아이디 입력*/
-#userName {
+#inputName {
     margin: 5px -67px 1px auto;
     width:24rem;
     height:1.5rem;
@@ -23,12 +23,13 @@ body{
     height:1.5rem;
 }
 /*댓글 입력*/
-#content {
+#CommentText {
     width:51.7rem;
     height:7rem;
 }
 /*아이디 비밀번호 입력 후 댓글 확인*/
-button  {
+
+#UserCheckBtn {
     margin-left:-17px;
     background-color: white;
     text-decoration-color: black;
