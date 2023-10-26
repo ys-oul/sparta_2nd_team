@@ -1,29 +1,33 @@
-
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="scripts/Comment.js"></script>
+<!--    <script src="scripts/test.js"></script>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="styles/Comment.css">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
 </head>
 <body>
-<link href="Comment.js">
     <div class="CommentContainer">
         <div class="NameReview">
             <span class="material-symbols-outlined">reviewreviews</span>
         </div>
-        <form>
-             <input id="inputSize" type="text" name="작성자" placeholder="닉네임을 입력해주세요">
+        <form id="formInput">
+             <input id="inputName" type="text" name="작성자" placeholder="닉네임을 입력해주세요">
             <input id="PasswordInput" placeholder="비밀번호">
+            <button  id="UserCheckBtn" click="likesBtn">Enter</button>
         </form>
-<textarea class="CommentText" placeholder="댓글 입력 ">
+<textarea id="CommentText" type="text" placeholder="댓글 입력 ">
 </textarea>
-          <button id="UserCheckBtn" click="">등록</button>
-        <button id="UserDeleteBtn" click="">삭제</button>
-        <button id="UserRepairBtn" click="">수정</button>
+<!--        <button id="UserDeleteBtn" click="">삭제</button>-->
+<!--        <button id="UserRepairBtn" click="">수정</button>-->
     </div>
 </body>
 </html>
