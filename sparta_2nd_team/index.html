@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/shared.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <script type="module" src="./scripts/app.js" defer></script>
+  </head>
+  <body>
+    <header id="main_header">
+      <a href="./index.html"><h1>MOViEMOViE</h1></a>
+      <nav id="nav_bar">
+        <div id="sort_btn">
+          <button id="pop_btn">인기순위</button>
+          <span class="partition">/</span>
+          <button id="ABC_btn">ABC</button>
+          <span class="partition">/</span>
+          <button id="rlsd_btn">개봉일순</button>
+          <span class="partition">/</span>
+          <button id="average_btn">평점순</button>
+        </div>
+        <div id="search_box">
+          <input
+            id="search_input"
+            type="text"
+            placeholder="제목으로 영화를 검색할 수 있어요:)"
+          />
+
+          <button id="search_btn">
+            <span class="material-symbols-outlined"> search </span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="category">
+        <h2 id="page_name">page name</h2>
+      </section>
+      <section id="card_area">
+        <section id="top_rated">
+          <ul id="top_grid" class="top_poster_grid"></ul>
+        </section>
+
+        <section id="rest_rated">
+          <ul id="rest_grid" class="rest_poster_grid"></ul>
+        </section>
+      </section>
+      <section>
+        <button id="up_btn">Top</button>
+      </section>
+    </main>
+    <footer>
+      <p>About 사조세자</p>
+      <section id="github_link">
+        <a href="깃헙링크"
+          ><img src="./img/github-mark.png" alt="github link"
+        /></a>
+        <a href="깃헙링크"
+          ><img src="./img/github-mark.png" alt="github link"
+        /></a>
+        <a href="깃헙링크"
+          ><img src="./img/github-mark.png" alt="github link"
+        /></a>
+        <a href="깃헙링크"
+          ><img src="./img/github-mark.png" alt="github link"
+        /></a>
+      </section>
+    </footer>
+  </body>
+</html>
