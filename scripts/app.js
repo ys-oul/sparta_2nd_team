@@ -92,7 +92,7 @@ function btn_click() {
 
 //input 요소에서 enter 누르면 검색 버튼 클릭한 것처럼
 function enterKey() {
-  if (window.event.keyCode == 13) {
+  if (window.e.keyCode == 13) {
     btn_click();
   }
 }

@@ -1,81 +1,79 @@
-const formTagCheck = document.getElementById("formInput");
-const btnAddTxt = document.getElementById('UserCheckBtn');
-const userName = document.getElementById('inputName');
-const InnerPassword = document.getElementById("PasswordInput");
-const CommentArea = document.getElementById("CommentText");
-const deleteBtn = document.getElementById("UserDeleteBtn");
-const RepairBtn= document.getElementById("UserRepairBtn");
+//  댓글 요소를 생성하는 함수
+function createCommentElement(comment) {
+    const commentElement = document.createElement('div'); // 새로운 div 엘리먼트를 생성
+    commentElement.className = 'Comment'; // div 엘리먼트에 'Comment' 클래스를 할당
 
- // 배열 선언
-const comments = [];
+    const commentTitle = document.createElement('h3'); // 새로운 h3 엘리먼트를 생성
+    commentTitle.className = 'comment-title'; // h3 엘리먼트에 'comment-title' 클래스를 할당
+    commentTitle.innerText = 'REVIEW'; // h3 엘리먼트의 텍스트 내용을 'REVIEW'로 설정
+    commentElement.appendChild(commentTitle); // h3 엘리먼트를 commentElement에 추가
 
-// 고유 키 생성 함수
-function generateUniqueKey() {
-    // 현재 시간을 기반으로 임의의 문자열을 생성
-    const key = Math.random().toString(36).substr(2,7);
-    return key;
+    const commentUser = document.createElement('p'); // 새로운 p 엘리먼트를 생성
+    commentUser.innerHTML = `<strong class="comment-label">작성자ID :</strong> <span class="comment-username">${comment.name}</span>`; // p 엘리먼트의 HTML 내용을 설정
+    commentElement.appendChild(commentUser); // p 엘리먼트를 commentElement에 추가
+
+    const commentContent = document.createElement('p'); // 새로운 p 엘리먼트를 생성
+    commentContent.innerHTML = `<strong class="comment-label">댓글 :</strong> ${comment.content}`; // p 엘리먼트의 HTML 내용을 설정
+    commentElement.appendChild(commentContent); // p 엘리먼트를 commentElement에 추가
+
+    return commentElement; // 생성한 commentElement를 반환
 }
 
-btnAddTxt.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (userName.value.trim() === " ") {
-    alert('작성자를 입력해주세요.');
-    userName.focus();
-} else if (InnerPassword.value.trim() === false) {
-    alert('설정할 비밀번호를 입력해주세요.');
-    InnerPassword.focus();
-} else if (CommentArea.value.trim() === false) {
-    alert("내용을 입력해주세요");
-    CommentArea.focus();
-} else if(isNaN) {
-        // 표시에 추가할 HTML 생성 (어떻게 사용할지 명확하지 않아서 추가 설명 필요)
-        function Template(addList) {
-            return `
-        <div class="comment">
-            <h3 class="comment-title">REVIEW</h3>
-            <p><strong class="comment-label">작성자ID :</strong> <span class="comment-username">${userName.value}</span></p>
-            <p><strong class="comment-label">댓글 :</strong> ${CommentArea.value}</p>
-        </div>
-    `;
-        }
+//  로컬 스토리지에서 댓글을 불러와서 화면에 표시하는 함수
+function loadCommentsFromLocalStorage() {
+    const commentContainer = document.getElementById('comment-container'); // 'comment-container' 엘리먼트를 가져옵
+    commentContainer.innerHTML = ''; // 'comment-container' 엘리먼트의 내용을 비웁
 
+    const comments = JSON.parse(localStorage.getItem('comments')) || []; // 로컬 스토리지에서 댓글을 불러옵
+    comments.forEach(comment => { // 불러온 댓글을 순환하면서 처리
+        const commentElement = createCommentElement(comment); // 댓글 엘리먼트를 생성
+        commentContainer.appendChild(commentElement); // 댓글 엘리먼트를 'comment-container'에 추가
+    });
+}
 
-        const generatedKey = generateUniqueKey();
-        // 생성한 키가 로컬 스토리지에 존재하지 않는지 확인
-        if (!localStorage.getItem(generatedKey)) {
-            let userInfo = {id: userName.value, pwd: InnerPassword.value, comment: CommentArea.value};
-            localStorage.setItem(generatedKey, JSON.stringify(userInfo));
-            console.log('생성된 고유 키: ' + generatedKey, JSON.stringify(userInfo));  // generateKey 에서 레퍼런스 에러뜸
-        } else {
-            alert('키 중복 발생! 다시 시도하세요.');
-        }
-                    // 댓글 중복 생성 기능 구현 예정
+//  페이지가 로딩될 때 댓글을 로컬 스토리지에서 불러와서 표시하는 이벤트 리스너를 추가
+document.addEventListener('DOMContentLoaded', loadCommentsFromLocalStorage);
 
-           let newComment = Template(userName.value, CommentArea.value);
-                formTagCheck.innerHTML += newComment;
-        function displayKeyAndValue(generatedKey) {
-            const container = document.getElementById('btnAddTxt');
-            const formElement = document.createElement('form');
-            const headingElement = document.createElement('h4');
-            headingElement.textContent = generatedKey;
-            const paragraphElement = document.createElement('p');
-            paragraphElement.className = 'ReviewText';
-            paragraphElement.textContent = generatedKey;
-            formElement.appendChild(headingElement);
-            formElement.appendChild(paragraphElement);
-            container.appendChild(formElement);
-        }
-      // 상태유지
-         formTagCheck.innerHTML += Template();
-            userName.value = " ";
-            InnerPassword.value = " ";
-            CommentArea.value = " ";
+//  'Enter' 버튼 클릭 이벤트에 대한 핸들러를 추가
+const btnAddTxt = document.getElementById('UserCheckBtn'); // 'UserCheckBtn' 엘리먼트를 가져옵
+btnAddTxt.addEventListener('click', (e) => { // 'Enter' 버튼 클릭 이벤트를 처리하는 함수를 등록
+    e.preventDefault(); // 기본 동작(폼 제출)을 막습
+            // element를 가져옴
+    const userName = document.getElementById('inputName'); 
+    const InnerPassword = document.getElementById('PasswordInput'); 
+    const CommentArea = document.getElementById('CommentText');
+    const commentremove = document.getElementById('RemoveButton');
+
+    if (userName.value.trim() === '') { // 작성자 입력란이 비어있는지 확인
+        alert('작성자를 입력해주세요.'); // 알림창을 띄웁
+        userName.focus(); // 작성자 입력란에 포커스를 맞춥
+    } else if (InnerPassword.value.trim() === '') { // 비밀번호 입력란이 비어있는지 확인
+        alert('설정할 비밀번호를 입력해주세요.'); // 알림창을 띄웁
+        InnerPassword.focus(); // 비밀번호 입력란에 포커스를 맞춥
+    } else if (CommentArea.value.trim() === '') { // 댓글 입력란이 비어있는지 확인
+        alert('내용을 입력해주세요'); // 알림창을 띄웁
+        CommentArea.focus(); // 댓글 입력란에 포커스를 맞춤
+    } else {
+        //  새로운 댓글 객체를 생성
+        const comment = {
+            name: userName.value, // 작성자 이름
+            password: InnerPassword.value, // 비밀번호
+            content: CommentArea.value, // 댓글 내용
+            removeBtn: commentremove.value
+        };
+
+        //  로컬 스토리지에 댓글을 저장
+        const comments = JSON.parse(localStorage.getItem('comments')) || []; // 이전 댓글을 로드하거나 빈 배열을 생성
+        comments.push(comment); // 새로운 댓글을 배열에 추가
+        localStorage.setItem('comments', JSON.stringify(comments)); // 업데이트된 댓글을 로컬 스토리지에 저장
+
+        // 입력 필드를 지웁
+        userName.value = '';
+        InnerPassword.value = '';
+        CommentArea.value = '';
+        commentremove.value = '';
+
+        // 업데이트된 댓글을 화면에 표시
+        loadCommentsFromLocalStorage();
     }
-
 });
-
-
-
-
-
-
