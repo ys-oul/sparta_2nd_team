@@ -16,6 +16,14 @@ function createCommentElement(comment) {
     commentContent.innerHTML = `<strong class="comment-label">댓글 :</strong> ${comment.content}`; // p 엘리먼트의 HTML 내용을 설정
     commentElement.appendChild(commentContent); // p 엘리먼트를 commentElement에 추가
 
+    const RepairBtn = document.createElement('span'); // 새로운 span 엘리먼트를 생성
+    RepairBtn.innerHTML = `<button id="repairBtnComponent" class="comment-label">수정</button> `; // p 엘리먼트의 HTML 내용을 설정
+    commentElement.appendChild(RepairBtn); // span 엘리먼트를 commentElement에 추가
+
+     const deleteBtn = document.createElement('span'); // 새로운 span 엘리먼트를 생성
+    deleteBtn.innerHTML = `<button id="deleteBtnComponent" class="comment-label">삭제</button> `; // span 엘리먼트의 HTML 내용을 설정
+    commentElement.appendChild(deleteBtn); // span 엘리먼트를 commentElement에 추가
+
     return commentElement; // 생성한 commentElement를 반환
 }
 
@@ -34,15 +42,16 @@ function loadCommentsFromLocalStorage() {
 //  페이지가 로딩될 때 댓글을 로컬 스토리지에서 불러와서 표시하는 이벤트 리스너를 추가
 document.addEventListener('DOMContentLoaded', loadCommentsFromLocalStorage);
 
+
 //  'Enter' 버튼 클릭 이벤트에 대한 핸들러를 추가
 const btnAddTxt = document.getElementById('UserCheckBtn'); // 'UserCheckBtn' 엘리먼트를 가져옵
+
 btnAddTxt.addEventListener('click', (e) => { // 'Enter' 버튼 클릭 이벤트를 처리하는 함수를 등록
     e.preventDefault(); // 기본 동작(폼 제출)을 막습
             // element를 가져옴
-    const userName = document.getElementById('inputName'); 
-    const InnerPassword = document.getElementById('PasswordInput'); 
+    const userName = document.getElementById('inputName');
+    const InnerPassword = document.getElementById('PasswordInput');
     const CommentArea = document.getElementById('CommentText');
-    const commentremove = document.getElementById('RemoveButton');
 
     if (userName.value.trim() === '') { // 작성자 입력란이 비어있는지 확인
         alert('작성자를 입력해주세요.'); // 알림창을 띄웁
@@ -59,7 +68,6 @@ btnAddTxt.addEventListener('click', (e) => { // 'Enter' 버튼 클릭 이벤트�
             name: userName.value, // 작성자 이름
             password: InnerPassword.value, // 비밀번호
             content: CommentArea.value, // 댓글 내용
-            removeBtn: commentremove.value
         };
 
         //  로컬 스토리지에 댓글을 저장
@@ -71,9 +79,24 @@ btnAddTxt.addEventListener('click', (e) => { // 'Enter' 버튼 클릭 이벤트�
         userName.value = '';
         InnerPassword.value = '';
         CommentArea.value = '';
-        commentremove.value = '';
 
         // 업데이트된 댓글을 화면에 표시
         loadCommentsFromLocalStorage();
     }
 });
+const ArrayContent = [];
+   const deleteBtnId = document.getElementById("#deleteBtnComponent");
+deleteBtnId.addEventListener("click", (e) => function (){
+    function deleteComment(comment){
+        const findIndex = localStorage.removeItem(comment);
+        if(findIndex != -1){
+            ArrayContent.splice(findIndex,1);
+              deleteComment();
+        }
+    };
+});
+
+
+
+
+

@@ -32,13 +32,13 @@
 
 #UserCheckBtn {
     background-color: brown;
-    color: black;
+    color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
 }
 
-#UserCheckBtn:hover {
+#UserCheckBtn:hover  {
     background-color: mediumvioletred;
 }
 
@@ -58,9 +58,15 @@
 
 .comment-label {
     font-weight: bold;
-    display: inline-block; /* 인라인 요소를 블록 요소로 변환 */
-    width: 200px; /* 원하는 가로 길이로 설정 */
+     /* 인라인 요소를 블록 요소로 변환 */
+    width: 50px; /* 원하는 가로 길이로 설정 */
     color:brown;
+    background-color: black;
+}
+textarea {
+    color:black;
+    width:50rem;
+    height: 5rem;
 }
 
 
