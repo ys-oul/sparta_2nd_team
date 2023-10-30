@@ -8,13 +8,13 @@ function createCommentElement(comment) {
     commentTitle.innerText = 'REVIEW'; // h3 엘리먼트의 텍스트 내용을 'REVIEW'로 설정
     commentElement.appendChild(commentTitle); // h3 엘리먼트를 commentElement에 추가
 
-    const commentUser = document.createElement('p'); // 새로운 p 엘리먼트를 생성
-    commentUser.innerHTML = `<strong class="comment-label">작성자ID :</strong> <span class="comment-username">${comment.name}</span>`; // p 엘리먼트의 HTML 내용을 설정
-    commentElement.appendChild(commentUser); // p 엘리먼트를 commentElement에 추가
+   const commentUser = document.createElement('p'); // 새로운 p 엘리먼트를 생성
+commentUser.innerHTML = `<div id="review_user"><strong class="comment-label">작성자ID :</strong> <span class="comment-username">${comment.name}</span></div>`; // p 엘리먼트의 HTML 내용을 설정
+commentElement.appendChild(commentUser); // p 엘리먼트를 commentElement에 추가
 
-    const commentContent = document.createElement('p'); // 새로운 p 엘리먼트를 생성
-    commentContent.innerHTML = `<strong class="comment-label">댓글 :</strong> ${comment.content}`; // p 엘리먼트의 HTML 내용을 설정
-    commentElement.appendChild(commentContent); // p 엘리먼트를 commentElement에 추가
+const commentContent = document.createElement('p'); // 새로운 p 엘리먼트를 생성
+commentContent.innerHTML = `<div id = "review_content"><strong class="comment-label">댓글 :</strong> ${comment.content}</div>`; // p 엘리먼트의 HTML 내용을 설정
+commentElement.appendChild(commentContent); // p 엘리먼트를 commentElement에 추가
 
     const RepairBtn = document.createElement('span'); // 새로운 span 엘리먼트를 생성
     RepairBtn.innerHTML = `<button id="repairBtnComponent" class="comment-label">수정</button> `; // p 엘리먼트의 HTML 내용을 설정
@@ -84,17 +84,18 @@ btnAddTxt.addEventListener('click', (e) => { // 'Enter' 버튼 클릭 이벤트�
         loadCommentsFromLocalStorage();
     }
 });
-const ArrayContent = [];
-   const deleteBtnId = document.getElementById("#deleteBtnComponent");
-deleteBtnId.addEventListener("click", (e) => function (){
-    function deleteComment(comment){
-        const findIndex = localStorage.removeItem(comment);
-        if(findIndex != -1){
-            ArrayContent.splice(findIndex,1);
-              deleteComment();
-        }
-    };
-});
+ // 삭제기능 추후 추가 예정
+// const ArrayContent = [];
+//    const deleteBtnId = document.getElementById("#deleteBtnComponent");
+// deleteBtnId.addEventListener("click", (e) => function (){
+//     function deleteComment(comment){
+//         const findIndex = localStorage.removeItem(comment);
+//         if(findIndex != -1){
+//             ArrayContent.splice(findIndex,1);
+//               deleteComment();
+//         }
+//     };
+// });
 
 
 

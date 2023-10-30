@@ -23,20 +23,17 @@ body {
   display: block;
   float: right;
   margin-right: 50px;
-
   width: 70px;
   height: 35px;
   border-style: solid;
   border-radius: 5px;
   border-style: none;
   background: black;
-
   color: #ff3030;
   text-align: center;
   font-family: "IBM Plex Sans KR", sans-serif;
   font-weight: bold;
   font-size: 16px;
-
   cursor: pointer;
 }
 
@@ -59,5 +56,13 @@ footer p {
 #github_link img {
   width: 50px;
   height: 50px;
-  margin: 10px;
+  margin: -2px;
+}
+#github_link a{
+  margin:2rem 2rem 2rem auto;
+text-align: center;
+  font-weight: bold;
+  font-family: "IBM Plex Sans KR", sans-serif;
+ color: black;
+
 }

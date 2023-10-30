@@ -199,8 +199,8 @@ function btn_click() {
     page_name.innerText = "검색 결과";
 
     //일치하는 결과 화면에 출력
-    check.forEach(function (TorF, index) {
-      if (TorF) {
+    check.forEach(function (true_or_false , index) {
+      if (true_or_false) {
         search_card(index);
       }
     });
@@ -304,7 +304,7 @@ average_btn.addEventListener("click", create_average);
 
 //상단 이동 버튼
 up_btn.addEventListener("click", () => {
-  alert("up");
+
   let body = document.getElementsByTagName("body")[0];
   //창의 스크롤을 본문 최상단으로 부드럽게 이동시킵니다.
   window.scroll({
@@ -317,5 +317,5 @@ card_area.addEventListener("click", (target) => {
   let click_element = target.target;
   let target_card = click_element.closest(".movie_card");
   localStorage.setItem("movie_id", target_card.id);
-  alert("영화 id: " + target_card.id);
+
 });
