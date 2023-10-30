@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+nav {
+  border-top: 1px solid #ffffffca;
+  border-bottom: 1px solid #ffffffca;
+  background: rgba(217, 217, 217, 0);
+}
+
+#nav_bar {
+  position: static;
+  display: flex;
+  justify-content: space-between;
+
+  height: 50px;
+}
+
+#sort_btn {
+  margin: auto 0 auto 50px;
+}
+
+#sort_btn button {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+#sort_btn button:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.partition {
+  color: white;
+}
+
+#search_box {
+  margin: auto 50px auto 0;
+  border-style: solid;
+  border-radius: 5px;
+  border: 0.5px solid #ffffff9f;
+}
+
+#search_input {
+  /* padding: 0 0 5px; */
+  border-style: none;
+  background-color: transparent;
+  width: 230px;
+  height: 30px;
+  text-align: center;
+  font-family: "IBM Plex Sans KR", sans-serif;
+  color: #fff;
+}
+
+#search_btn {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-style: none;
+  background-color: transparent;
+  /* padding: 5px 0 0 0; */
+
+  color: #ffffff9f;
+  text-align: center;
+  cursor: pointer;
+}
+
+#search_input:focus {
+  outline: none;
+}
+
+#search_btn:hover {
+  color: white;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+#category {
+  margin: 3.125rem 10rem 3.125rem 0;
+  /* 50px 200px 50px 0 */
+}
+
+#category h2 {
+  color: white;
+  text-align: right;
+  font-size: 3.75rem;
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: bold;
+}
+
+main img {
+  border-radius: 15px;
+}
+
+.top_poster_grid {
+  /* width: 1300px;
+  position: static;
+  margin: 0 auto 100px auto; */
+  width: 81rem;
+  height: 60rem;
+  position: static;
+  margin: 0 auto 6.25rem auto;
+  padding: 0;
+
+  display: grid;
+  grid-template: 1fr 1fr /1fr 1fr 1fr 1fr;
+  place-items: center;
+  /* grid-gap: 20px 20px; */
+  grid-gap: 1.25rem 1.25rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  display: inline;
+  text-align: center;
+
+  transition: transform 0.5s ease-out;
+}
+
+li:hover {
+  cursor: pointer;
+  transform: scale(1.05); /*요소 크기 1.05배*/
+}
+
+.movie_title {
+  margin: 1rem 0 0 0;
+  color: white;
+  text-align: center;
+  /* font-size: 1rem; */
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.top {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+}
+
+.top img {
+  /* width: 545px; */
+  width: 34rem;
+}
+.top p {
+  font-size: 2rem;
+}
+
+.top5 img {
+  /* width: 250px; */
+  width: 16rem;
+}
+
+.top5 p {
+  width: 18rem;
+  font-size: 1.25rem;
+}
+
+.rest_poster_grid {
+  /* width: 1300px;
+  position: static;
+  margin: 0 auto 48px auto;
+  padding: 0; */
+  width: 81rem;
+  height: 81rem;
+  position: static;
+  margin: 0 auto 3rem auto;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  place-items: center;
+  /* grid-gap: 20px 20px; */
+  grid-gap: 2rem 1.25rem;
+}
+
+.rest_poster_grid img {
+  /* width: 200px; */
+  width: 15rem;
+}
+
+.rest_poster_grid p {
+  width: 14rem;
+}
+
+.search_section {
+  width: 81rem;
+  position: static;
+  margin: 0 auto 3rem auto;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  place-items: center;
+  /* grid-gap: 20px 20px; */
+  grid-gap: 2rem 1.25rem;
+}
+
+.search_output {
+  color: white;
+  font-size: 2rem;
+  margin: 2rem 0 2rem 3rem;
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: bold;
+}
+
+.search_card img {
+  width: 15rem;
+}
+
+.search_card p {
+  width: 14rem;
+}

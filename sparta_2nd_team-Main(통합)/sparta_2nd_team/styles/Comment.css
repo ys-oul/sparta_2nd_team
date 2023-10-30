@@ -1,0 +1,75 @@
+/* 전체 컨테이너 스타일링 */
+.CommentContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: black;
+}
+
+/* 리뷰 아이콘 스타일링 */
+.NameReview {
+    text-align: center;
+    font-size: 24px;
+    color: brown;
+    margin-bottom: 20px;
+}
+
+/* 댓글 입력 폼 스타일링 */
+.CommentForm {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    color: brown;
+
+}
+
+.CommentForm input, .CommentForm button {
+    color:brown;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+#UserCheckBtn {
+    background-color: brown;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#UserCheckBtn:hover  {
+    background-color: mediumvioletred;
+}
+
+/* 댓글 스타일링 */
+.Comment {
+    border: 1px solid brown;
+    padding: 10px;
+    margin: 10px 0;
+    color: brown;
+}
+
+.comment-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: brown;
+}
+
+.comment-label {
+    font-weight: bold;
+     /* 인라인 요소를 블록 요소로 변환 */
+    width: 50px; /* 원하는 가로 길이로 설정 */
+    color:brown;
+    background-color: black;
+}
+textarea {
+    color:black;
+    width:50rem;
+    height: 5rem;
+}
+
+
+.comment-username {
+    color: brown;
+}
