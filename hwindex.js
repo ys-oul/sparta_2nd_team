@@ -48,8 +48,5 @@ fetch(
   </div>
   `;
 
-    // 영화 평점 소수점 반올림하기
-    const roundRate = math.round(selectedMoive * 100);
-
     movieBox.appendChild(card);
   });
